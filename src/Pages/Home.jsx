@@ -121,11 +121,15 @@ const TextBoxInput = styled(Typography)(({ theme }) => ({
   fontSize:30,
   position:"absolute",
   left:500,
-  bottom:400,
-  color:"white",
+  bottom:450,
+  color:"yellow",
+  fontFamily:"cursive",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("md")]: {
+    left:70,
+  bottom:770,
+  },
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));

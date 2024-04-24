@@ -12,17 +12,42 @@ justifyContent:"space-between",
     background:"#E0FFFF",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("md")]: {
+    justifyContent:"center",
+    gap:30,
+  },
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
 const FirstBox = styled(Box)(({ theme }) => ({
-border:"2px solid red",
   display:"flex",
-  gap:30,
   padding:20,
   width:"40%",
   justifyContent:"space-between",
+  
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {
+    display:"none",
+    justifyContent:"center",
+  },
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+const Wrapper = styled(Box)(({ theme }) => ({
+
+  display:"flex",
+  gap:20,
+  
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+const BoxOne = styled(Box)(({ theme }) => ({
+  display:"flex",
+  flexDirection:"column",
   
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
@@ -39,9 +64,62 @@ const Outer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {},
 }));
 const TextBox = styled(Typography)(({ theme }) => ({
-    fontFamily:"inherit",
+    fontFamily:"unset",
     fontSize:18,
     cursor:"pointer",
+    color:"#B22222",
+
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+const TextBoxEng = styled(Button)(({ theme }) => ({
+    fontFamily:"unset",
+    border:"1px solid red",
+    fontSize:15,
+    cursor:"pointer",
+    padding:0,
+    borderRadius:10,
+    background:"red",
+    color:"white",
+    ":hover":{
+       background:"red",
+    color:"white",
+    },
+
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+const TextBoxJpn = styled(Button)(({ theme }) => ({
+    fontFamily:"unset",
+    padding:0,
+    fontSize:15,
+    cursor:"pointer",
+     border:"1px solid red",
+borderRadius:10,
+background:"red",
+    color:"white",
+    ":hover":{
+       background:"red",
+    color:"white",
+    },
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+const TextBoxOne = styled(Typography)(({ theme }) => ({
+    fontFamily:"revert-layer",
+    fontWeight:600,
+    fontSize:28,
+    cursor:"pointer",
+    color:"#FFA500",
 
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
@@ -82,12 +160,20 @@ function Navbar() {
     <Outer>
     <OuterContainer>
      <ImageBox as={"img"} src="https://c8.alamy.com/comp/2FN138E/rubber-stamp-illustration-for-japanese-business-inspected-checked-2FN138E.jpg"/>
-     <TextBox sx={{fontWeight:600,fontSize:22,}}>JOB HUNT</TextBox>
+     <TextBoxOne >JOB HUNT</TextBoxOne>
         <FirstBox>
        
             <TextBox>HOME</TextBox>
             <TextBox>JOB LIST</TextBox>
             <TextBox>ABOUT</TextBox>
+
+            <BoxOne>
+            <TextBox>Language</TextBox>
+            <Wrapper>
+              <TextBoxEng>Eng</TextBoxEng>
+               <TextBoxJpn>Jpn</TextBoxJpn>
+            </Wrapper>
+            </BoxOne>
      
         </FirstBox>
     </OuterContainer>
