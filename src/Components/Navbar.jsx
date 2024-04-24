@@ -1,5 +1,5 @@
 import { Box, Button, Typography, styled } from '@mui/material';
-import React from 'react'
+import React, { useState } from 'react'
 import Home from '../Pages/Home';
 import PublicRoutes from '../routes/PublicRoutes';
 
@@ -155,20 +155,23 @@ const ImageBox = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {},
 }));
 function Navbar() {
+  const [language,setLanguage]=useState(true)
   return (
 
     <Outer>
     <OuterContainer>
      <ImageBox as={"img"} src="https://c8.alamy.com/comp/2FN138E/rubber-stamp-illustration-for-japanese-business-inspected-checked-2FN138E.jpg"/>
-     <TextBoxOne >JOB HUNT</TextBoxOne>
+    {language? <TextBoxOne >就職活動</TextBoxOne>:
+      <TextBoxOne >JOB HUNT</TextBoxOne>}
         <FirstBox>
        
-            <TextBox>HOME</TextBox>
-            <TextBox>JOB LIST</TextBox>
-            <TextBox>ABOUT</TextBox>
+           { language?<TextBox>家</TextBox>: <TextBox>HOME</TextBox>}
+           { language? <TextBox>ジョブリスト</TextBox>: <TextBox>JOB LIST</TextBox>}
+          { language?  <TextBox>について</TextBox>: <TextBox>ABOUT</TextBox>}
+            
 
             <BoxOne>
-            <TextBox>Language</TextBox>
+         {language?<TextBox>言語</TextBox> :<TextBox>Language</TextBox>}
             <Wrapper>
               <TextBoxEng>Eng</TextBoxEng>
                <TextBoxJpn>Jpn</TextBoxJpn>

@@ -176,12 +176,15 @@ function Home() {
   <InputBox>
   {language?<TextBoxInput>夢の仕事を見つけよう</TextBoxInput>:
    <TextBoxInput>Find Your Dream Job</TextBoxInput>}
-   <TextField sx={{width:"80%",position:"absolute",zIndex:100,right:{ xs: 35, md: 130, lg: 100}, bottom:{ xs: 690, sm: 850, md: 450, lg:350},display:"flex",background:"white",borderRadius:20,}}
+  {language?<TextField sx={{width:"80%",position:"absolute",zIndex:100,right:{ xs: 35, md: 130, lg: 100}, bottom:{ xs: 690, sm: 850, md: 450, lg:350},display:"flex",background:"white",borderRadius:20,}}
+        label="仕事を探す"
+        variant="outlined"
+        fullWidth       
+      />:<TextField sx={{width:"80%",position:"absolute",zIndex:100,right:{ xs: 35, md: 130, lg: 100}, bottom:{ xs: 690, sm: 850, md: 450, lg:350},display:"flex",background:"white",borderRadius:20,}}
         label="Search Job"
         variant="outlined"
-        fullWidth
-        
-      />
+        fullWidth       
+      />}
 
   </InputBox>
 
