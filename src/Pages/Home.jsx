@@ -43,7 +43,6 @@ const InnerBox = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {},
 }));
 const ImageBoxOne = styled(Box)(({ theme }) => ({
-
   width:"100%",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
@@ -121,9 +120,9 @@ const TextBoxInput = styled(Typography)(({ theme }) => ({
   fontWeight:600,
   fontSize:30,
   position:"absolute",
-  left:200,
-  
-
+  left:500,
+  bottom:400,
+  color:"white",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {},

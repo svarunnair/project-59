@@ -5,7 +5,7 @@ import PublicRoutes from '../routes/PublicRoutes';
 
 const OuterContainer = styled(Box)(({ theme }) => ({
   display:"flex",
-gap:350,
+justifyContent:"space-between",
   height:80,
   position:"sticky",
   top:0,
@@ -17,11 +17,11 @@ gap:350,
   [theme.breakpoints.down("xs")]: {},
 }));
 const FirstBox = styled(Box)(({ theme }) => ({
-
+border:"2px solid red",
   display:"flex",
   gap:30,
   padding:20,
-  width:"100%",
+  width:"40%",
   justifyContent:"space-between",
   
   [theme.breakpoints.down("xl")]: {},
