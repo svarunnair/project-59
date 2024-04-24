@@ -1,6 +1,6 @@
 import { InputOutlined } from '@mui/icons-material';
 import { Box, TextField, Typography, styled } from '@mui/material';
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from '../Components/Footer';
 
 const OuterContainer = styled(Box)(({ theme }) => ({
@@ -148,9 +148,25 @@ const Second = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
+const BoxWrap = styled(Box)(({ theme }) => ({
+
+  display:"flex",
+  flexDirection:"column",
+  alignItems:"center",
+
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {
+   
+  },
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
 
 
 function Home() {
+  const [language,setLanguage]=useState(true)
+
   return (
     <Outer>
    <OuterContainer>
@@ -158,7 +174,8 @@ function Home() {
 <First>
    <ImageBoxOne as={"img"} src="https://www.forbes.com/advisor/wp-content/uploads/2022/08/Image_-_Free_Job_Sites_.jpeg.jpg"/>
   <InputBox>
-  <TextBoxInput>Find Your Dream Job</TextBoxInput>
+  {language?<TextBoxInput>夢の仕事を見つけよう</TextBoxInput>:
+   <TextBoxInput>Find Your Dream Job</TextBoxInput>}
    <TextField sx={{width:"80%",position:"absolute",zIndex:100,right:{ xs: 35, md: 130, lg: 100}, bottom:{ xs: 690, sm: 850, md: 450, lg:350},display:"flex",background:"white",borderRadius:20,}}
         label="Search Job"
         variant="outlined"
@@ -169,6 +186,7 @@ function Home() {
   </InputBox>
 
   </First>
+  {!language&&<BoxWrap>
    <InnerBox>
    <ImageBox as={"img"} src="https://miro.medium.com/v2/resize:fit:870/1*TlSB_3wfxg-MSYhaN5aLlA.jpeg"/>
    <Second>
@@ -213,7 +231,56 @@ When it comes to job hunting, navigating the vast expanse of the internet for th
 
 <ImageBox as={"img"} src="https://c8.alamy.com/comp/2PKCKP1/a-female-new-hire-job-hunter-nervously-answering-the-phone-2PKCKP1.jpg"/>
    </InnerBox>
+</BoxWrap>}
 
+
+{language&&<BoxWrap>
+   <InnerBox>
+   <ImageBox as={"img"} src="https://miro.medium.com/v2/resize:fit:870/1*TlSB_3wfxg-MSYhaN5aLlA.jpeg"/>
+   <Second>
+   <HeaderText>就職する予定はありますか?</HeaderText>
+   <TextBox>
+就職活動に関して言えば、インターネットの広大な空間をナビゲートして理想の求人サイトを探すのは、干し草の山から針を探すような気分になるかもしれません。選択肢が膨大にあると圧倒されてしまい、どのプラットフォームが自分の特定のニーズや願望に適しているのか迷ってしまうかもしれません。
+   </TextBox>
+</Second>
+   </InnerBox>
+
+   <InnerBox >
+   
+   <Second>
+    <HeaderText>就職する予定はありますか?</HeaderText>
+   <TextBox>
+
+就職活動に関して言えば、インターネットの広大な空間をナビゲートして理想の求人サイトを探すのは、干し草の山から針を探すような気分になるかもしれません。選択肢が膨大にあると圧倒されてしまい、どのプラットフォームが自分の特定のニーズや願望に適しているのか迷ってしまうかもしれません。
+   </TextBox>
+</Second>
+
+<ImageBox as={"img"} src="https://motto-jp.com/media/wp-content/uploads/2020/03/eyecatch-9.jpeg"/>
+   </InnerBox>
+
+    <InnerBox>
+   <ImageBox as={"img"} src="https://japanupclose.web-japan.org/files/100417398.jpeg"/>
+   <Second>
+    <HeaderText>就職する予定はありますか?</HeaderText>
+   <TextBox>
+就職活動に関して言えば、インターネットの広大な空間をナビゲートして理想の求人サイトを探すのは、干し草の山から針を探すような気分になるかもしれません。選択肢が膨大にあると圧倒されてしまい、どのプラットフォームが自分の特定のニーズや願望に適しているのか迷ってしまうかもしれません。
+   </TextBox>
+</Second>
+   </InnerBox>
+
+   <InnerBox>
+   
+   <Second>
+    <HeaderText>就職する予定はありますか?</HeaderText>
+   <TextBox>
+就職活動に関して言えば、インターネットの広大な空間をナビゲートして理想の求人サイトを探すのは、干し草の山から針を探すような気分になるかもしれません。選択肢が膨大にあると圧倒されてしまい、どのプラットフォームが自分の特定のニーズや願望に適しているのか迷ってしまうかもしれません。
+   </TextBox>
+</Second>
+
+<ImageBox as={"img"} src="https://c8.alamy.com/comp/2PKCKP1/a-female-new-hire-job-hunter-nervously-answering-the-phone-2PKCKP1.jpg"/>
+   </InnerBox>
+</BoxWrap>
+}
    </OuterContainer>
    <Footer/>
    </Outer>
