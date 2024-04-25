@@ -9,7 +9,7 @@ justifyContent:"space-between",
   height:80,
   position:"sticky",
   top:0,
-    background:"#E0FFFF",
+    background:"#FFFFE0",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {
@@ -116,10 +116,10 @@ background:"red",
 }));
 const TextBoxOne = styled(Typography)(({ theme }) => ({
     fontFamily:"revert-layer",
-    fontWeight:600,
-    fontSize:28,
+    fontWeight:700,
+    fontSize:30,
     cursor:"pointer",
-    color:"#FFA500",
+    color:"#696969",
 
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
@@ -156,11 +156,19 @@ const ImageBox = styled(Box)(({ theme }) => ({
 }));
 function Navbar() {
   const [language,setLanguage]=useState(true)
+
+  const handleEnglish=()=>{
+    setLanguage(false)
+  }
+  const handleJpn=()=>{
+    setLanguage(true)
+  }
+
   return (
 
     <Outer>
     <OuterContainer>
-     <ImageBox as={"img"} src="https://c8.alamy.com/comp/2FN138E/rubber-stamp-illustration-for-japanese-business-inspected-checked-2FN138E.jpg"/>
+     <ImageBox  as={"img"} src="https://cdn.pixabay.com/photo/2015/11/02/12/31/interview-1018333_1280.png"/>
     {language? <TextBoxOne >就職活動</TextBoxOne>:
       <TextBoxOne >JOB HUNT</TextBoxOne>}
         <FirstBox>
@@ -173,14 +181,14 @@ function Navbar() {
             <BoxOne>
          {language?<TextBox>言語</TextBox> :<TextBox>Language</TextBox>}
             <Wrapper>
-              <TextBoxEng>Eng</TextBoxEng>
-               <TextBoxJpn>Jpn</TextBoxJpn>
+             { language?<TextBoxEng onClick={handleEnglish}>工学</TextBoxEng>:<TextBoxEng onClick={handleEnglish}>Eng</TextBoxEng>}
+               {language?<TextBoxJpn onClick={handleJpn}>日本</TextBoxJpn>:<TextBoxJpn onClick={handleJpn}>Jpn</TextBoxJpn>}
             </Wrapper>
             </BoxOne>
      
         </FirstBox>
     </OuterContainer>
-    <PublicRoutes/>
+    <PublicRoutes language={language}/>
     </Outer>
   )
 }

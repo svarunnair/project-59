@@ -8,7 +8,7 @@ const OuterContainer = styled(Box)(({ theme }) => ({
 
   display:"flex",
   flexDirection:"column",
-  background:"#E0FFFF",
+  background:"#F0E68C",
   gap:50,
   justifyContent:"center",
   alignItems:"center",
@@ -44,6 +44,7 @@ const InnerBox = styled(Box)(({ theme }) => ({
 }));
 const ImageBoxOne = styled(Box)(({ theme }) => ({
   width:"100%",
+ 
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {},
@@ -54,7 +55,8 @@ const ImageBoxOne = styled(Box)(({ theme }) => ({
 const ImageBox = styled(Box)(({ theme }) => ({
  
   width:"40%",
-  padding:10,
+  boxShadow: "rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px",
+  
   borderRadius:30,
   transition: 'transform 0.3s ease', 
   ':hover': {
@@ -164,8 +166,9 @@ const BoxWrap = styled(Box)(({ theme }) => ({
 }));
 
 
-function Home() {
-  const [language,setLanguage]=useState(true)
+function Home({language}) {
+  
+  console.log("langH....",language)
 
   return (
     <Outer>
