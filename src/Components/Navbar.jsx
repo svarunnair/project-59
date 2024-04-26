@@ -2,6 +2,7 @@ import { Box, Button, Typography, styled } from '@mui/material';
 import React, { useState } from 'react'
 import Home from '../Pages/Home';
 import PublicRoutes from '../routes/PublicRoutes';
+import { useNavigate } from 'react-router-dom';
 
 const OuterContainer = styled(Box)(({ theme }) => ({
   display:"flex",
@@ -156,12 +157,16 @@ const ImageBox = styled(Box)(({ theme }) => ({
 }));
 function Navbar() {
   const [language,setLanguage]=useState(true)
+  const navigate=useNavigate()
 
   const handleEnglish=()=>{
     setLanguage(false)
   }
   const handleJpn=()=>{
     setLanguage(true)
+  }
+  const handleAbout=()=>{
+    navigate('/about')
   }
 
   return (
@@ -175,7 +180,7 @@ function Navbar() {
        
            { language?<TextBox>家</TextBox>: <TextBox>HOME</TextBox>}
            { language? <TextBox>ジョブリスト</TextBox>: <TextBox>JOB LIST</TextBox>}
-          { language?  <TextBox>について</TextBox>: <TextBox>ABOUT</TextBox>}
+          { language?  <TextBox onClick={handleAbout}>について</TextBox>: <TextBox onClick={handleAbout}>ABOUT</TextBox>}
             
 
             <BoxOne>
