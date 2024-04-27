@@ -168,7 +168,7 @@ const BoxWrap = styled(Box)(({ theme }) => ({
 
 function Home({language}) {
   
-  console.log("langH....",language)
+ 
 
   return (
     <Outer>
@@ -206,10 +206,10 @@ When it comes to job hunting, navigating the vast expanse of the internet for th
    <InnerBox >
    
    <Second>
-    <HeaderText>Planing to get a job ?</HeaderText>
+    <HeaderText>When to Start the Career Planning Process ?</HeaderText>
    <TextBox>
 
-When it comes to job hunting, navigating the vast expanse of the internet for the ideal job search website can feel like searching for a needle in a haystack. The sheer multitude of options can feel overwhelming, leaving you wondering which platform suits your specific needs and aspirations.
+The best time to engage in the career planning process is long before you start your job search. Your senior year of high school and the first year or two of college are great times to start thinking about what kinds of jobs and careers you’re interested in. You can then test-drive them through classes, internships, certification programs and virtual job simulations to gain a fuller understanding of what they’re really like, discard the jobs you dislike, and further explore the ones you connect with.
    </TextBox>
 </Second>
 
@@ -219,9 +219,11 @@ When it comes to job hunting, navigating the vast expanse of the internet for th
     <InnerBox>
    <ImageBox as={"img"} src="https://japanupclose.web-japan.org/files/100417398.jpeg"/>
    <Second>
-    <HeaderText>Planing to get a job ?</HeaderText>
+    <HeaderText>Career gap ?</HeaderText>
    <TextBox>
-When it comes to job hunting, navigating the vast expanse of the internet for the ideal job search website can feel like searching for a needle in a haystack. The sheer multitude of options can feel overwhelming, leaving you wondering which platform suits your specific needs and aspirations.
+TOKYO, Jan 30 (Reuters) - Japan's jobless rate fell to 2.4% in December from the previous month, government data showed on Tuesday.
+The seasonally adjusted unemployment rate compared with economists' median forecast of 2.5% in a Reuters poll.
+The jobs-to-applicants ratio slipped to 1.27 in December, matching the level seen in June 2022, separate labour ministry data showed. It was slightly lower than the median forecast of 1.28.
    </TextBox>
 </Second>
    </InnerBox>
@@ -229,9 +231,9 @@ When it comes to job hunting, navigating the vast expanse of the internet for th
    <InnerBox>
    
    <Second>
-    <HeaderText>Planing to get a job ?</HeaderText>
+    <HeaderText>How to Prepare for a Career Change: Step-By-Step Guide</HeaderText>
    <TextBox>
-When it comes to job hunting, navigating the vast expanse of the internet for the ideal job search website can feel like searching for a needle in a haystack. The sheer multitude of options can feel overwhelming, leaving you wondering which platform suits your specific needs and aspirations.
+Changing careers can take many forms. You can change your role, shift your function, move departments, enter a new industry, or a combination of these. Regardless of the type of change you want to make (and whether you know what that change may be) the first step is knowing that change is possible and that it's possible for you.
    </TextBox>
 </Second>
 
@@ -288,7 +290,6 @@ When it comes to job hunting, navigating the vast expanse of the internet for th
 </BoxWrap>
 }
    </OuterContainer>
-   <Footer/>
    </Outer>
   )
 }

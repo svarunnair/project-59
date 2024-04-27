@@ -156,7 +156,7 @@ function About({language}) {
 
     <InnerDiv>
     <WrapHead>
-    <HeadText>Let's feel the cultural smell of<HeadTextTwo>JAPAN</HeadTextTwo> </HeadText>
+    {language?<HeadText>文化の香りを感じてみよう<HeadTextTwo>日本</HeadTextTwo> </HeadText>:<HeadText>Let's feel the smell of<HeadTextTwo>Japan</HeadTextTwo> </HeadText>}
     </WrapHead>
     <Image as={"img"} src="https://www.internations.org/seo-assets/static/75df6fd48a90a389baf8765eca00a255/6e20c/Japan-expats.jpg"/>
     

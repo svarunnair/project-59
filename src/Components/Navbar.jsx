@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Home from '../Pages/Home';
 import PublicRoutes from '../routes/PublicRoutes';
 import { useNavigate } from 'react-router-dom';
+import logo from "./logo.png"
 
 const OuterContainer = styled(Box)(({ theme }) => ({
   display:"flex",
@@ -69,6 +70,7 @@ const TextBox = styled(Typography)(({ theme }) => ({
     fontSize:18,
     cursor:"pointer",
     color:"#B22222",
+    fontWeight:600,
 
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
@@ -155,33 +157,55 @@ const ImageBox = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
-function Navbar() {
+const TextBoxBtn = styled(Button)(({ theme }) => ({
+  border:"1px solid red",
+    borderRadius:25,
+    fontSize:12,
+   
+
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+function Navbar(props) {
+  console.log("pe=ropp",props)
   const [language,setLanguage]=useState(true)
   const navigate=useNavigate()
 
   const handleEnglish=()=>{
     setLanguage(false)
+    props.lang(false)
+    
   }
+ 
   const handleJpn=()=>{
     setLanguage(true)
+     props.lang(true)
   }
   const handleAbout=()=>{
     navigate('/about')
   }
 
+   const handleHome=()=>{
+    navigate('/')
+  }
+  const handleReg=()=>{
+    navigate('/signin')
+  }
   return (
 
     <Outer>
     <OuterContainer>
-     <ImageBox  as={"img"} src="https://cdn.pixabay.com/photo/2015/11/02/12/31/interview-1018333_1280.png"/>
-    {language? <TextBoxOne >就職活動</TextBoxOne>:
-      <TextBoxOne >JOB HUNT</TextBoxOne>}
+     <ImageBox  as={"img"} src={logo}/>
+    
         <FirstBox>
        
-           { language?<TextBox>家</TextBox>: <TextBox>HOME</TextBox>}
+           { language?<TextBox onClick={handleHome}>家</TextBox>: <TextBox onClick={handleHome}>HOME</TextBox>}
            { language? <TextBox>ジョブリスト</TextBox>: <TextBox>JOB LIST</TextBox>}
           { language?  <TextBox onClick={handleAbout}>について</TextBox>: <TextBox onClick={handleAbout}>ABOUT</TextBox>}
-            
+ {language? <TextBoxBtn onClick={handleReg}>ジョブリスト</TextBoxBtn>: <TextBoxBtn onClick={handleReg}>Registration</TextBoxBtn>}
 
             <BoxOne>
          {language?<TextBox>言語</TextBox> :<TextBox>Language</TextBox>}

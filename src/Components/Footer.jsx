@@ -83,16 +83,38 @@ const TextOne = styled(Typography)(({ theme }) => ({
 }));
 
 
-function Footer() {
+function Footer(props) {
+  console.log("FoterLng.......>",props)
+  
+  const language=props.lang
   return (
     <OuterContainer>
-    <First>
+{language?<First>
+    <TextBox>就職活動</TextBox>
+    <TextOne>© 2024 ジョブハント合同会社。無断転載を禁じます。
+  </TextOne>
+    </First>: <First>
     <TextBox>JOB HUNT</TextBox>
     <TextOne>© 2024 Job Hunt LLC. All Rights Reserved.
   </TextOne>
-    </First>
+    </First>}
 
-    <Second>
+{ language?<Second>
+    <Inner>
+        <Disc>について</Disc>
+        <Disc>プライバシー</Disc>
+    </Inner>
+     <Inner>
+        <Disc>接触</Disc>
+        <Disc>キャリア</Disc>
+    </Inner>
+     <Inner>
+        <Disc>宣伝する
+</Disc>
+        <Disc>ポリシー</Disc>
+    </Inner>
+
+    </Second>: <Second>
     <Inner>
         <Disc>About</Disc>
         <Disc>Privacy</Disc>
@@ -106,7 +128,7 @@ function Footer() {
         <Disc>Policy</Disc>
     </Inner>
 
-    </Second>
+    </Second>}
 
     </OuterContainer>
   )
