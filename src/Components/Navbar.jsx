@@ -4,6 +4,8 @@ import Home from '../Pages/Home';
 import PublicRoutes from '../routes/PublicRoutes';
 import { useNavigate } from 'react-router-dom';
 import logo from "./logo.png"
+import ViewSidebarIcon from '@mui/icons-material/ViewSidebar';
+import TemporaryDrawer from './SideBar';
 
 const OuterContainer = styled(Box)(({ theme }) => ({
   display:"flex",
@@ -15,8 +17,9 @@ justifyContent:"space-between",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {
-    justifyContent:"center",
-    gap:30,
+     
+    justifyContent:"left",
+    
   },
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
@@ -40,6 +43,15 @@ const Wrapper = styled(Box)(({ theme }) => ({
 
   display:"flex",
   gap:20,
+  
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+const TextSlide = styled(Box)(({ theme }) => ({
+fontSize:30,
   
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
@@ -117,43 +129,51 @@ background:"red",
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
-const TextBoxOne = styled(Typography)(({ theme }) => ({
-    fontFamily:"revert-layer",
-    fontWeight:700,
-    fontSize:30,
-    cursor:"pointer",
-    color:"#696969",
+const LogoBox = styled(Box)(({ theme }) => ({
+   
+    display:"flex",
+    width:"50%",
+    justifyContent:"space-between",
+    
 
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("md")]: {
+      width:"70%",
+  },
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
-const ButtonBox = styled(Button)(({ theme }) => ({
-    background:"brown",
-    color:"white",
-    height:30,
-      fontSize:18,
-    width:80,
-    textTransform:"none",
-    fontFamily:"monospace",
-    borderRadius:0,
-
-  [theme.breakpoints.down("xl")]: {},
-  [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("md")]: {},
-  [theme.breakpoints.down("sm")]: {},
-  [theme.breakpoints.down("xs")]: {},
-}));
-const ImageBox = styled(Box)(({ theme }) => ({
+const SideBar = styled(Box)(({ theme }) => ({
+   
     width:"10%",
-    height:70,
+    display:"none",
+    alignItems:"center",
    
 
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("md")]: {
+     width:"20%",
+     display:"flex",
+     justifyContent:"center",
+     
+  },
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+const ImageBox = styled(Box)(({ theme }) => ({
+    width:"30%",
+    height:70,
+    cursor:"pointer",
+   
+
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {
+    width:"45%",
+    height:70,
+  },
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
@@ -170,8 +190,9 @@ const TextBoxBtn = styled(Button)(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {},
 }));
 function Navbar(props) {
-  console.log("pe=ropp",props)
+  
   const [language,setLanguage]=useState(true)
+
   const navigate=useNavigate()
 
   const handleEnglish=()=>{
@@ -179,13 +200,19 @@ function Navbar(props) {
     props.lang(false)
     
   }
- 
+  
+ const handleJob=()=>{
+  navigate('/job')
+ }
   const handleJpn=()=>{
     setLanguage(true)
      props.lang(true)
   }
   const handleAbout=()=>{
     navigate('/about')
+  }
+  const handleLogo=()=>{
+    navigate('/')
   }
 
    const handleHome=()=>{
@@ -198,12 +225,17 @@ function Navbar(props) {
 
     <Outer>
     <OuterContainer>
-     <ImageBox  as={"img"} src={logo}/>
+    <LogoBox>
+    <SideBar >
+     <TemporaryDrawer/>
     
+    </SideBar>
+     <ImageBox onClick={handleLogo} as={"img"} src={logo}/>
+    </LogoBox>
         <FirstBox>
        
            { language?<TextBox onClick={handleHome}>家</TextBox>: <TextBox onClick={handleHome}>HOME</TextBox>}
-           { language? <TextBox>ジョブリスト</TextBox>: <TextBox>JOB LIST</TextBox>}
+           { language? <TextBox onClick={handleJob}>ジョブリスト</TextBox>: <TextBox onClick={handleJob}>JOB LIST</TextBox>}
           { language?  <TextBox onClick={handleAbout}>について</TextBox>: <TextBox onClick={handleAbout}>ABOUT</TextBox>}
  {language? <TextBoxBtn onClick={handleReg}>ジョブリスト</TextBoxBtn>: <TextBoxBtn onClick={handleReg}>Registration</TextBoxBtn>}
 

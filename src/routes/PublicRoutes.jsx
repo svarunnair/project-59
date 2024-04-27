@@ -4,6 +4,7 @@ import Home from '../Pages/Home'
 import About from '../Pages/About'
 import Signin from '../Pages/Signin'
 import Signup from '../Pages/Signup'
+import Job from '../Pages/Job'
 
 function PublicRoutes({language}) {
 
@@ -13,6 +14,7 @@ function PublicRoutes({language}) {
         <Route path='/about' element={<About language={language}/>}/>
         <Route path='/signin' element={<Signin language={language}/>}/>
         <Route path='/signup' element={<Signup language={language}/>}/>
+         <Route path='/job' element={<Job language={language}/>}/>
        
                
     </Routes>

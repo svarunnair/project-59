@@ -2,6 +2,7 @@ import { InputOutlined } from '@mui/icons-material';
 import { Box, TextField, Typography, styled } from '@mui/material';
 import React, { useState } from 'react'
 import Footer from '../Components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const OuterContainer = styled(Box)(({ theme }) => ({
 
@@ -167,7 +168,11 @@ const BoxWrap = styled(Box)(({ theme }) => ({
 
 
 function Home({language}) {
+   const navigate=useNavigate()
   
+   const handleSearch=()=>{
+      navigate('/job')
+   }
  
 
   return (
@@ -179,11 +184,11 @@ function Home({language}) {
   <InputBox>
   {language?<TextBoxInput>夢の仕事を見つけよう</TextBoxInput>:
    <TextBoxInput>Find Your Dream Job</TextBoxInput>}
-  {language?<TextField sx={{width:"80%",position:"absolute",zIndex:100,right:{ xs: 35, md: 130, lg: 100}, bottom:{ xs: 690, sm: 850, md: 450, lg:350},display:"flex",background:"white",borderRadius:20,}}
+  {language?<TextField onClick={handleSearch} sx={{width:"80%",position:"absolute",zIndex:100,right:{ xs: 35, md: 130, lg: 100}, bottom:{ xs: 690, sm: 850, md: 450, lg:350},display:"flex",background:"white",borderRadius:20,}}
         label="仕事を探す"
         variant="outlined"
         fullWidth       
-      />:<TextField sx={{width:"80%",position:"absolute",zIndex:100,right:{ xs: 35, md: 130, lg: 100}, bottom:{ xs: 690, sm: 850, md: 450, lg:350},display:"flex",background:"white",borderRadius:20,}}
+      />:<TextField onClick={handleSearch} sx={{width:"80%",position:"absolute",zIndex:100,right:{ xs: 35, md: 130, lg: 100}, bottom:{ xs: 690, sm: 850, md: 450, lg:350},display:"flex",background:"white",borderRadius:20,}}
         label="Search Job"
         variant="outlined"
         fullWidth       
