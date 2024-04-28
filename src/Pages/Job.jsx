@@ -166,6 +166,7 @@ const jnpData=[
 const OuterContainer = styled(Box)(({ theme }) => ({
    
     padding:10,
+    background:"#B0C4DE",
     [theme.breakpoints.down("xl")]: {},
     [theme.breakpoints.down("lg")]: {},
     [theme.breakpoints.down("md")]: {},
@@ -249,6 +250,7 @@ const OuterContainer = styled(Box)(({ theme }) => ({
 
   width:"100%",
   borderRadius:20,
+  background:"#fff",
 //   border:"1px solid red",
   display:"flex",
   flexDirection:"column",
@@ -382,8 +384,8 @@ function Job({language}) {
 
     <BoxDiv>
     <Wrapper>
-   {language?<OutlinedInput placeholder='職種から探す...' onChange={handleSearch}/>:<OutlinedInput placeholder='Search by Job role...' onChange={handleSearch}/>}
-    {language?<OutlinedInput placeholder='場所から探す...' onChange={handleSearchLoc}/>:<OutlinedInput placeholder='Search by Location...' onChange={handleSearchLoc}/>}
+   {language?<OutlinedInput sx={{background:"#fff",borderRadius:20,}} placeholder='職種から探す...' onChange={handleSearch}/>:<OutlinedInput sx={{background:"#fff",borderRadius:20,}}  placeholder='Search by Job role...' onChange={handleSearch}/>}
+    {language?<OutlinedInput sx={{background:"#fff",borderRadius:20,}}  placeholder='場所から探す...' onChange={handleSearchLoc}/>:<OutlinedInput sx={{background:"#fff",borderRadius:20,}}  placeholder='Search by Location...' onChange={handleSearchLoc}/>}
     </Wrapper>
     
 

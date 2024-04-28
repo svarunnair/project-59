@@ -1,4 +1,4 @@
-import { Box, Button, Typography, styled } from '@mui/material';
+import { Box, Button, Typography, colors, styled } from '@mui/material';
 import React, { useState } from 'react'
 import Home from '../Pages/Home';
 import PublicRoutes from '../routes/PublicRoutes';
@@ -13,7 +13,7 @@ justifyContent:"space-between",
   height:80,
   position:"sticky",
   top:0,
-    background:"#FFFFE0",
+    background:"#4682B4",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {
@@ -81,7 +81,7 @@ const TextBox = styled(Typography)(({ theme }) => ({
     fontFamily:"unset",
     fontSize:18,
     cursor:"pointer",
-    color:"#B22222",
+    color:"#FFFAFA",
     fontWeight:600,
 
   [theme.breakpoints.down("xl")]: {},
@@ -178,9 +178,17 @@ const ImageBox = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {},
 }));
 const TextBoxBtn = styled(Button)(({ theme }) => ({
-  border:"1px solid red",
+ 
     borderRadius:25,
+    cursor:"pointer",
     fontSize:12,
+    color:"#FFFAFA",
+    boxShadow:" rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
+    ":hover":{
+      background:"red",
+      color:"white",
+      boxShadow:"rgb(38, 57, 77) 0px 20px 30px -10px;",
+    },
    
 
   [theme.breakpoints.down("xl")]: {},

@@ -10,7 +10,8 @@ const OuterContainer = styled(Box)(({ theme }) => ({
  display:"flex",
  flexDirection:"column",
  justifyContent:"center",
- background:"#EEE8AA",
+
+ background:"#808000",
  
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
@@ -78,8 +79,11 @@ const WrapHead = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
-const VideoBox = styled(Box)(({ theme }) => ({
-  
+const Wrap = styled(Box)(({ theme }) => ({
+  display:"flex",
+  flexDirection:"column",
+  justifyContent:"center",
+  alignItems:"center",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {},
@@ -92,6 +96,8 @@ const SecondInnerDiv = styled(Box)(({ theme }) => ({
   justifyContent:"center",
   alignItems:"center",
   alignContent:"center",
+  width:"80%",
+ 
  
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
@@ -107,6 +113,8 @@ const SecondInnerDivOne = styled(Box)(({ theme }) => ({
   justifyContent:"center",
   alignItems:"center",
   alignContent:"center",
+  width:"80%",
+  
  
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
@@ -152,7 +160,8 @@ const WrapText = styled(Typography)(({ theme }) => ({
 }));
 const ImageBox = styled(Box)(({ theme }) => ({
   width:"30%",
-  padding:20,
+ borderRadius:20,
+ boxShadow: " rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;",
   cursor:"grab",
   ":hover":{
     transition:".5s",
@@ -182,7 +191,7 @@ function About({language}) {
     <Image as={"img"} src="https://www.internations.org/seo-assets/static/75df6fd48a90a389baf8765eca00a255/6e20c/Japan-expats.jpg"/>
     
     </InnerDiv>
-
+<Wrap>
 <SecondInnerDivOne>
 {language?<WrapText>
     <TextBoxHead>日本の文化について聞いたことがありますか</TextBoxHead>
@@ -213,9 +222,9 @@ function About({language}) {
 <ImageBox as={"img"} src="https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/00/a0000995/img/en/a0000995_parts_589d487e9f866.jpg?20200911184019&q=80&rw=686&rh=490"/>
 </SecondInnerDivOne>
 
-<VideoBox>
+
 <video style={{width:"100%"}} autoPlay muted loop src={japan}/>
-</VideoBox>
+
 
 <SecondInnerDiv>
 <ImageBox as={"img"} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3lioB5DBN5WJ7PFLwTSmo2VQ2ZMpPdVMtQOND5RtmPQ&s"/>
@@ -325,7 +334,7 @@ Traditional Japanese fashion represents a long-standing history of traditional c
 <ImageBox as={"img"} src="https://blog.sakura.co/wp-content/uploads/2022/09/sakuraco_japanese-traditional-clothing-thumbnail.png"/>
 
 </SecondInnerDivOne>
-
+</Wrap>
 
     </OuterContainer>
   )

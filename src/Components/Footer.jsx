@@ -1,5 +1,8 @@
 import { Box, Typography, styled } from '@mui/material';
 import React from 'react'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import XIcon from '@mui/icons-material/X';
 
 const OuterContainer = styled(Box)(({ theme }) => ({
 
@@ -10,7 +13,7 @@ const OuterContainer = styled(Box)(({ theme }) => ({
     alignItems:"center",
     padding:10,
     gap:10,
-    backgroundColor:"#DCDCDC",
+    backgroundColor:"#B0C4DE",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {},
@@ -20,6 +23,23 @@ const OuterContainer = styled(Box)(({ theme }) => ({
 const First = styled(Box)(({ theme }) => ({
 
 
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+const TextBoxOne = styled(Typography)(({ theme }) => ({
+  color:"grey",
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+const Wrap = styled(Box)(({ theme }) => ({
+  display:"flex",
+  gap:30,
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {},
@@ -56,6 +76,13 @@ const Inner = styled(Box)(({ theme }) => ({
 const Disc = styled(Typography)(({ theme }) => ({
     fontSize:15,
     textAlign:"left",
+    cursor:"pointer",
+    fontFamily:"monospace",
+    color:"grey",
+    ":hover":{
+    textDecoration:"underline",
+    },
+
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {},
@@ -65,6 +92,7 @@ const Disc = styled(Typography)(({ theme }) => ({
 const TextBox = styled(Typography)(({ theme }) => ({
 fontSize:30,
 fontWeight:600,
+fontFamily:"monospace",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {
@@ -129,6 +157,12 @@ function Footer(props) {
     </Inner>
 
     </Second>}
+{language?<TextBoxOne>フォローしてください</TextBoxOne>:<TextBoxOne>Follow us on</TextBoxOne>}
+<Wrap>
+  <FacebookIcon/>
+  <InstagramIcon/>
+  <XIcon/>
+</Wrap>
 
     </OuterContainer>
   )

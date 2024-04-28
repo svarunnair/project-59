@@ -83,7 +83,7 @@ const OuterContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down("xs")]: {},
   }));
 
-function Signup() {
+function Signup({language}) {
 
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
@@ -94,7 +94,7 @@ function Signup() {
   const [gender,setGender]=useState('')
   const navigate=useNavigate()
 
-
+console.log("Suppp",language)
   const handleEmail=(e)=>{
     let value=e.target.value 
     setEmail(value)
@@ -161,24 +161,24 @@ function Signup() {
         <InnerDiv>
 
         <InnerBox>
-            <TextTitle>Create Account</TextTitle>
+          {language?<TextTitle>アカウントを作成する</TextTitle>: <TextTitle>Create Account</TextTitle>}
 
             <DetailBox>
 
 
                 <DivBox>
 
-                <InputText>FIRST NAME</InputText>
+               {language? <InputText>ファーストネーム</InputText>:<InputText>FIRST NAME</InputText>}
                 <OutlinedInput onChange={handleFirst} sx={{height:40,width:"100%"}}/>
                 </DivBox>
                 <DivBox>
-                <InputText>LAST NAME</InputText>
+              {language? <InputText>苗字</InputText>: <InputText>LAST NAME</InputText>}
                 <OutlinedInput onChange={handleLast} sx={{height:40,width:"100%"}}/>
                 </DivBox>
 
                 <DivBox sx={{display:"flex",}}>
                     <InnerBox>
-                    <InputText>GENDER</InputText>
+                   {language?<InputText>性別</InputText>: <InputText>GENDER</InputText>}
                    
 
       <FormControl variant="standard" sx={{ m: 1, width: 70, textAlign: "left", border: "1px solid black" }}>
@@ -189,16 +189,16 @@ function Signup() {
         onChange={handleGender} // Use onChange event handler here
         label="Salutation"
       >
-        <MenuItem value="male">Male</MenuItem>
-        <MenuItem value="female">Female</MenuItem>
-        <MenuItem value="other">Other</MenuItem>
+        {language? <MenuItem value="male">Male</MenuItem>:<MenuItem value="male">Male</MenuItem>}
+        {language?<MenuItem value="female">女性</MenuItem>: <MenuItem value="female">Female</MenuItem>}
+        {language?<MenuItem value="other">他の</MenuItem>: <MenuItem value="other">Other</MenuItem>}
       </Select>
     </FormControl>
 
 
                     </InnerBox>
                     <InnerBox >
-                    <InputText>D.O.B</InputText>
+                   {language?<InputText>生年月日</InputText>: <InputText>D.O.B</InputText>}
                    
                   <Input onChange={handleDate} type='date'/>      
 
@@ -206,19 +206,19 @@ function Signup() {
 
                 </DivBox>
                 <DivBox>
-                <InputText>PHONE</InputText>
+               {language?<InputText>電話</InputText>: <InputText>PHONE</InputText>}
                 <OutlinedInput onChange={handlePhone} sx={{height:40,width:"100%"}}/>
                 </DivBox>
                 <DivBox>
-                <InputText>EMAIL</InputText>
+                {language?<InputText>EMAIL</InputText>:<InputText>EMAIL</InputText>}
                 <OutlinedInput onChange={handleEmail} sx={{height:40,width:"100%"}}/>
                 </DivBox>
                 <DivBox>
-                <InputText>PASSWORD</InputText>
+               {language?<InputText>パスワード</InputText>:<InputText>PASSWORD</InputText>}
                 <OutlinedInput  type='password' onChange={handlePassword} sx={{height:40,width:"100%"}}/>
                 </DivBox>
                 <DivBox sx={{paddingBottom:10,}}>
-                    <Button onClick={handleCreate} sx={{color:"white",borderRadius:0,position:"static",background:"black",width:"100%",":hover":{color:"white",background:"black",}}}>Create</Button>
+                    {language?<Button onClick={handleCreate} sx={{color:"white",borderRadius:0,position:"static",background:"black",width:"100%",":hover":{color:"white",background:"black",}}}>作成する</Button>: <Button onClick={handleCreate} sx={{color:"white",borderRadius:0,position:"static",background:"black",width:"100%",":hover":{color:"white",background:"black",}}}>Create</Button>}
                 </DivBox>
 
             </DetailBox>

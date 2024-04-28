@@ -9,8 +9,9 @@ const OuterContainer = styled(Box)(({ theme }) => ({
 
   display:"flex",
   flexDirection:"column",
-  background:"#F0E68C",
+  background:"#8FBC8F",
   gap:50,
+  paddingBottom:50,
   justifyContent:"center",
   alignItems:"center",
   [theme.breakpoints.down("xl")]: {},
