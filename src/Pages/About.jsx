@@ -39,7 +39,9 @@ const HeadText = styled(Typography)(({ theme }) => ({
  
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("md")]: {
+    fontSize:28,
+  },
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
@@ -49,7 +51,9 @@ const HeadTextTwo = styled(Typography)(({ theme }) => ({
   color:"#FF0000",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("md")]: {
+    fontSize:28,
+  },
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
@@ -91,6 +95,21 @@ const SecondInnerDiv = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {
     flexDirection:"column",
+  },
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
+const SecondInnerDivOne = styled(Box)(({ theme }) => ({
+ 
+  display:"flex",
+  justifyContent:"center",
+  alignItems:"center",
+  alignContent:"center",
+ 
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {
+    flexDirection:"column-reverse",
   },
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
@@ -156,13 +175,13 @@ function About({language}) {
 
     <InnerDiv>
     <WrapHead>
-    {language?<HeadText>文化の香りを感じてみよう<HeadTextTwo>日本</HeadTextTwo> </HeadText>:<HeadText>Let's feel the smell of<HeadTextTwo>Japan</HeadTextTwo> </HeadText>}
+    {language?<HeadText>文化の香りを感じてみよう<HeadTextTwo>日本</HeadTextTwo> </HeadText>:<HeadText>Let's feel the smell of<HeadTextTwo>JAPAN</HeadTextTwo> </HeadText>}
     </WrapHead>
     <Image as={"img"} src="https://www.internations.org/seo-assets/static/75df6fd48a90a389baf8765eca00a255/6e20c/Japan-expats.jpg"/>
     
     </InnerDiv>
 
-<SecondInnerDiv>
+<SecondInnerDivOne>
 {language?<WrapText>
     <TextBoxHead>日本の文化について聞いたことがありますか</TextBoxHead>
     <TextBox>日本の文化は数千年の間に大きく変わりましたが、
@@ -190,7 +209,7 @@ function About({language}) {
 
 
 <ImageBox as={"img"} src="https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/00/a0000995/img/en/a0000995_parts_589d487e9f866.jpg?20200911184019&q=80&rw=686&rh=490"/>
-</SecondInnerDiv>
+</SecondInnerDivOne>
 
 <VideoBox>
 <video style={{width:"100%"}} autoPlay muted loop src={japan}/>
@@ -223,7 +242,7 @@ function About({language}) {
 
 </SecondInnerDiv>
 
-<SecondInnerDiv>
+<SecondInnerDivOne>
 
 {language?<WrapText>
     <TextBoxHead>和食</TextBoxHead>
@@ -243,7 +262,7 @@ function About({language}) {
 
 <ImageBox as={"img"} src="https://www.maruha-nichiro.com/who_we_are/img/Japanese-food-culture_02.png"/>
 
-</SecondInnerDiv>
+</SecondInnerDivOne>
 
 
 <SecondInnerDiv>
@@ -277,7 +296,7 @@ Okinawa and Amami have a subtropical oceanic climate. These areas have hot and h
 </SecondInnerDiv>
 
 
-<SecondInnerDiv>
+<SecondInnerDivOne>
 
 {language?<WrapText>
     <TextBoxHead>和食</TextBoxHead>
@@ -303,7 +322,7 @@ Traditional Japanese fashion represents a long-standing history of traditional c
 
 <ImageBox as={"img"} src="https://blog.sakura.co/wp-content/uploads/2022/09/sakuraco_japanese-traditional-clothing-thumbnail.png"/>
 
-</SecondInnerDiv>
+</SecondInnerDivOne>
 
 
     </OuterContainer>

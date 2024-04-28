@@ -200,6 +200,10 @@ function Navbar(props) {
     props.lang(false)
     
   }
+  const handleData=(data)=>{
+    setLanguage(data)
+    console.log("data....///",data)
+  }
   
  const handleJob=()=>{
   navigate('/job')
@@ -227,7 +231,7 @@ function Navbar(props) {
     <OuterContainer>
     <LogoBox>
     <SideBar >
-     <TemporaryDrawer/>
+     <TemporaryDrawer sendData={handleData}/>
     
     </SideBar>
      <ImageBox onClick={handleLogo} as={"img"} src={logo}/>

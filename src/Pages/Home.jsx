@@ -43,6 +43,22 @@ const InnerBox = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
+const InnerBoxOne = styled(Box)(({ theme }) => ({
+
+
+  display:"flex",
+  alignItems:"center",
+  justifyContent:"center",
+
+
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {
+    flexDirection:"column-reverse",
+  },
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
 const ImageBoxOne = styled(Box)(({ theme }) => ({
   width:"100%",
  
@@ -132,6 +148,7 @@ const TextBoxInput = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     left:70,
   bottom:770,
+  
   },
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
@@ -208,18 +225,18 @@ When it comes to job hunting, navigating the vast expanse of the internet for th
 </Second>
    </InnerBox>
 
-   <InnerBox >
+   <InnerBoxOne >
    
    <Second>
     <HeaderText>When to Start the Career Planning Process ?</HeaderText>
-   <TextBox>
+   <TextBox >
 
 The best time to engage in the career planning process is long before you start your job search. Your senior year of high school and the first year or two of college are great times to start thinking about what kinds of jobs and careers you’re interested in. You can then test-drive them through classes, internships, certification programs and virtual job simulations to gain a fuller understanding of what they’re really like, discard the jobs you dislike, and further explore the ones you connect with.
    </TextBox>
 </Second>
 
 <ImageBox as={"img"} src="https://motto-jp.com/media/wp-content/uploads/2020/03/eyecatch-9.jpeg"/>
-   </InnerBox>
+   </InnerBoxOne>
 
     <InnerBox>
    <ImageBox as={"img"} src="https://japanupclose.web-japan.org/files/100417398.jpeg"/>
@@ -233,7 +250,7 @@ The jobs-to-applicants ratio slipped to 1.27 in December, matching the level see
 </Second>
    </InnerBox>
 
-   <InnerBox>
+   <InnerBoxOne>
    
    <Second>
     <HeaderText>How to Prepare for a Career Change: Step-By-Step Guide</HeaderText>
@@ -243,7 +260,7 @@ Changing careers can take many forms. You can change your role, shift your funct
 </Second>
 
 <ImageBox as={"img"} src="https://c8.alamy.com/comp/2PKCKP1/a-female-new-hire-job-hunter-nervously-answering-the-phone-2PKCKP1.jpg"/>
-   </InnerBox>
+   </InnerBoxOne>
 </BoxWrap>}
 
 
@@ -258,7 +275,7 @@ Changing careers can take many forms. You can change your role, shift your funct
 </Second>
    </InnerBox>
 
-   <InnerBox >
+   <InnerBoxOne >
    
    <Second>
     <HeaderText>就職する予定はありますか?</HeaderText>
@@ -269,7 +286,7 @@ Changing careers can take many forms. You can change your role, shift your funct
 </Second>
 
 <ImageBox as={"img"} src="https://motto-jp.com/media/wp-content/uploads/2020/03/eyecatch-9.jpeg"/>
-   </InnerBox>
+   </InnerBoxOne>
 
     <InnerBox>
    <ImageBox as={"img"} src="https://japanupclose.web-japan.org/files/100417398.jpeg"/>
@@ -281,7 +298,7 @@ Changing careers can take many forms. You can change your role, shift your funct
 </Second>
    </InnerBox>
 
-   <InnerBox>
+   <InnerBoxOne>
    
    <Second>
     <HeaderText>就職する予定はありますか?</HeaderText>
@@ -291,7 +308,7 @@ Changing careers can take many forms. You can change your role, shift your funct
 </Second>
 
 <ImageBox as={"img"} src="https://c8.alamy.com/comp/2PKCKP1/a-female-new-hire-job-hunter-nervously-answering-the-phone-2PKCKP1.jpg"/>
-   </InnerBox>
+   </InnerBoxOne>
 </BoxWrap>
 }
    </OuterContainer>
