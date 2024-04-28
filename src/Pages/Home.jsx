@@ -1,4 +1,4 @@
-import { InputOutlined } from '@mui/icons-material';
+import { Height, InputOutlined } from '@mui/icons-material';
 import { Box, TextField, Typography, styled } from '@mui/material';
 import React, { useState } from 'react'
 import Footer from '../Components/Footer';
@@ -73,7 +73,6 @@ const ImageBox = styled(Box)(({ theme }) => ({
  
   width:"40%",
   boxShadow: "rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px",
-  
   borderRadius:30,
   transition: 'transform 0.3s ease', 
   ':hover': {
@@ -81,7 +80,9 @@ const ImageBox = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("md")]: {
+    width:"80%", 
+  },
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
@@ -124,17 +125,36 @@ const First = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
+const DivWrap = styled(Box)(({ theme }) => ({
+   
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {
+   display:"none",
+  },
+  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("xs")]: {},
+}));
 const InputBox = styled(Box)(({ theme }) => ({
   display:"flex",
   flexDirection:"column",
   justifyContent:"center",
   alignItems:"center",
+  
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {},
   [theme.breakpoints.down("sm")]: {},
   [theme.breakpoints.down("xs")]: {},
 }));
+const customBreakpoints = {
+  customXL: 1600,
+  customLG: 1280,
+  customMD: 440,
+  customSM: 600,
+  customXS: 0,
+};
+
 const TextBoxInput = styled(Typography)(({ theme }) => ({
   fontWeight:600,
   fontSize:30,
@@ -143,15 +163,21 @@ const TextBoxInput = styled(Typography)(({ theme }) => ({
   bottom:450,
   color:"yellow",
   fontFamily:"cursive",
-  [theme.breakpoints.down("xl")]: {},
-  [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("md")]: {
-    left:70,
+  
+  [theme.breakpoints.down(customBreakpoints.customXL)]: {},
+  [theme.breakpoints.down(customBreakpoints.customLG)]: {},
+  [theme.breakpoints.down(customBreakpoints.customMD)]: {
+    
+  
+  left:70,
   bottom:770,
   
   },
-  [theme.breakpoints.down("sm")]: {},
-  [theme.breakpoints.down("xs")]: {},
+  [theme.breakpoints.down(customBreakpoints.customSM)]: {},
+  [theme.breakpoints.down(customBreakpoints.customXS)]: {},
+  '@media (max-width: 385px) and (max-height: 687px)': {
+   bottom:500,
+  },
 }));
 const Second = styled(Box)(({ theme }) => ({
   width:"50%",
@@ -201,15 +227,15 @@ function Home({language}) {
   <InputBox>
   {language?<TextBoxInput>夢の仕事を見つけよう</TextBoxInput>:
    <TextBoxInput>Find Your Dream Job</TextBoxInput>}
-  {language?<TextField onClick={handleSearch} sx={{width:"80%",position:"absolute",zIndex:100,right:{ xs: 35, md: 130, lg: 100}, bottom:{ xs: 690, sm: 850, md: 450, lg:350},display:"flex",background:"white",borderRadius:20,}}
+  {language?<DivWrap><TextField onClick={handleSearch} sx={{width:"80%",position:"absolute",zIndex:100,right:{ xs: 35, md: 130, lg: 100}, bottom:{ xs: 690, sm: 850, md: 450, lg:350},display:"flex",background:"white",borderRadius:20,}}
         label="仕事を探す"
         variant="outlined"
         fullWidth       
-      />:<TextField onClick={handleSearch} sx={{width:"80%",position:"absolute",zIndex:100,right:{ xs: 35, md: 130, lg: 100}, bottom:{ xs: 690, sm: 850, md: 450, lg:350},display:"flex",background:"white",borderRadius:20,}}
+      /></DivWrap>:<DivWrap><TextField onClick={handleSearch} sx={{width:"80%",position:"absolute",zIndex:100,right:{ xs: 35, md: 130, lg: 100}, bottom:{ xs: 690, sm: 850, md: 450, lg:350},display:"flex",background:"white",borderRadius:20,}}
         label="Search Job"
         variant="outlined"
         fullWidth       
-      />}
+      /></DivWrap>}
 
   </InputBox>
 

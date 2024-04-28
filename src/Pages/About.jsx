@@ -60,6 +60,7 @@ const HeadTextTwo = styled(Typography)(({ theme }) => ({
 const Image = styled(Box)(({ theme }) => ({
   width:"100%",
 
+
  
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
@@ -78,6 +79,7 @@ const WrapHead = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {},
 }));
 const VideoBox = styled(Box)(({ theme }) => ({
+  
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {},

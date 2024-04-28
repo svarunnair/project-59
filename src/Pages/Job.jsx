@@ -80,6 +80,89 @@ const jobData=[
     },
 ]
 
+const jnpData=[
+  {
+        title:"営業部長",
+        experience:"5年",
+        salary:"135000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },{
+        title:"営業部長",
+        experience:"5年",
+        salary:"135000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },{
+        title:"営業部長",
+        experience:"5年",
+        salary:"235000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },{
+        title:"営業部長",
+        experience:"5年",
+        salary:"435000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },{
+        title:"営業部長",
+        experience:"5年",
+        salary:"95000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },{
+        title:"営業部長",
+        experience:"5年",
+        salary:"735000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },{
+        title:"営業部長",
+        experience:"5年",
+        salary:"835000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },{
+        title:"営業部長",
+        experience:"5年",
+        salary:"88000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },{
+        title:"営業部長",
+        experience:"5年",
+        salary:"55000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },{
+        title:"営業部長",
+        experience:"5年",
+        salary:"35000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },{
+        title:"営業部長",
+        experience:"5年",
+        salary:"15000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },{
+        title:"営業部長",
+        experience:"5年",
+        salary:"175000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },{
+        title:"営業部長",
+        experience:"5年",
+        salary:"225000",
+        skills:"コミュニケーションスキル、マーケティング知識",
+        location:"コミュニケーションスキル、マーケティング知識"
+  },
+  
+]
+
 const OuterContainer = styled(Box)(({ theme }) => ({
    
     padding:10,
@@ -225,6 +308,7 @@ paddingTop:30,
   }));
   const ButtonBox = styled(Button)(({ theme }) => ({
     width:"100%",
+    position:"static",
     background:"#6495ED",
     color:"white",
     ":hover":{
@@ -237,20 +321,38 @@ paddingTop:30,
     [theme.breakpoints.down("sm")]: {},
     [theme.breakpoints.down("xs")]: {},
   }));
+  const ButtonBoxOne = styled(Button)(({ theme }) => ({
+    width:"100%",
+    background:"green",
+    color:"white",
+    ":hover":{
+         background:"green",
+    color:"white",
+    },
+    [theme.breakpoints.down("xl")]: {},
+    [theme.breakpoints.down("lg")]: {},
+    [theme.breakpoints.down("md")]: {},
+    [theme.breakpoints.down("sm")]: {},
+    [theme.breakpoints.down("xs")]: {},
+  }));
 
-function Job() {
+function Job({language}) {
     const [search,setSearch]=useState(jobData)
     const [page,setPage]=useState(1)
     const [initial,setInitial]=useState(0)
     const [final,setFinal]=useState(6)
     const dataLength=jobData.length
 
+    console.log("JobLang",language)
     console.log("Length",dataLength)
 
     const handleSearch=(e)=>{
         let value=e.target.value
         let filterData=jobData.filter(item=>item.title.toLowerCase().includes(value.toLowerCase()))
         setSearch(filterData)
+    }
+    const handleApply=()=>{
+      alert("Application send successfully")
     }
     const handleSearchLoc=(e)=>{
         let value=e.target.value
@@ -271,35 +373,38 @@ function Job() {
             setPage(page+1)
         }
     }
+
    
   return (
     <OuterContainer>
     <InnerBox>
-    <Topic>Job Vacancy</Topic>
+    {language?<Topic>求人情報</Topic>:<Topic>Job Vacancy</Topic>}
 
     <BoxDiv>
     <Wrapper>
-    <OutlinedInput placeholder='Search by Job role' onChange={handleSearch}/>
-    <OutlinedInput placeholder='Search by Location' onChange={handleSearchLoc}/>
+   {language?<OutlinedInput placeholder='職種から探す...' onChange={handleSearch}/>:<OutlinedInput placeholder='Search by Job role...' onChange={handleSearch}/>}
+    {language?<OutlinedInput placeholder='場所から探す...' onChange={handleSearchLoc}/>:<OutlinedInput placeholder='Search by Location...' onChange={handleSearchLoc}/>}
     </Wrapper>
     
 
-<WrapData>
+
+    <WrapData>
 {search.slice(initial,final).map((item)=>(
    <DataBox>
    <DetailBox>
     <Heading>{item.title}</Heading>
-    <TextBox>Skills : {item.skills}</TextBox>
-    <TextBox>Experience : {item.experience}</TextBox>
-     <TextBox>Salary : {item.salary}</TextBox>
-    <TextBox>Location : {item.location}</TextBox>
+   {language? <TextBox>スキル : {item.skills}</TextBox>: <TextBox>Skills : {item.skills}</TextBox>}
+   { language?<TextBox>経験 : {item.experience}</TextBox>:<TextBox>Experience : {item.experience}</TextBox>}
+    { language?<TextBox>給料 : {item.salary}</TextBox>:<TextBox>Salary : {item.salary}</TextBox>}
+    {language?<TextBox>位置 : {item.location}</TextBox>:<TextBox>Location : {item.location}</TextBox>}
     </DetailBox>
-    <ButtonBox>Apply</ButtonBox>
+     <ButtonBox onClick={()=>handleApply(item)}>Apply</ButtonBox>
     </DataBox>
 ))}
     </WrapData>
 
-    <Page><Button onClick={handlePre}>Pre</Button>Page  {page}<Button onClick={handleNext}>Next</Button></Page>
+    {language?<Page><Button onClick={handlePre}>前</Button>ページ  {page}<Button onClick={handleNext}>次</Button></Page>:
+     <Page><Button onClick={handlePre}>Pre</Button>Page  {page}<Button onClick={handleNext}>Next</Button></Page>}
 
     </BoxDiv>
     

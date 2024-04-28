@@ -53,29 +53,19 @@ export default function TemporaryDrawer({ sendData }) {
     navigate('/job')
   }
   const handleEng=()=>{
+    
     setLanguage(false)
     sendData(language)
-  //  send(language)
   }
   const handleJap=()=>{
     setLanguage(true)
     sendData(language)
-  //  send(language)
   }
 
   const DrawerList = (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List sx={{display:"flex",flexDirection:"column",paddingTop:10,}}>
-        {/* {['Home', 'Job List', 'About', 'Registration'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))} */}
+       
         <Button onClick={handleHome}>HOME</Button>
         <Button onClick={handleJob }>Job List</Button>
         <Button onClick={handleAbout}>About</Button>
@@ -91,16 +81,7 @@ export default function TemporaryDrawer({ sendData }) {
         <Button onClick={handleJap}>Jap</Button>
       </TextBox>
 </Wrap>
-        {/* {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))} */}
+       
       </List>
     </Box>
   );
