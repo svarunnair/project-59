@@ -40,6 +40,7 @@ const TextBoxOne = styled(Typography)(({ theme }) => ({
 const Wrap = styled(Box)(({ theme }) => ({
   display:"flex",
   gap:30,
+
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {},
@@ -115,6 +116,15 @@ function Footer(props) {
   console.log("FoterLng.......>",props)
   
   const language=props.lang
+  const handleFb=()=>{
+    window.location.href='https://www.facebook.com'
+  }
+  const handleInsta=()=>{
+    window.location.href='https://www.instagram.com'
+  }
+  const handleX=()=>{
+    window.location.href='https://www.x.com'
+  }
   return (
     <OuterContainer>
 {language?<First>
@@ -159,9 +169,9 @@ function Footer(props) {
     </Second>}
 {language?<TextBoxOne>フォローしてください</TextBoxOne>:<TextBoxOne>Follow us on</TextBoxOne>}
 <Wrap>
-  <FacebookIcon/>
-  <InstagramIcon/>
-  <XIcon/>
+  <FacebookIcon sx={{cursor:"pointer"}} onClick={handleFb}/>
+  <InstagramIcon sx={{cursor:"pointer"}} onClick={handleInsta}/>
+  <XIcon sx={{cursor:"pointer"}} onClick={handleX}/>
 </Wrap>
 
     </OuterContainer>

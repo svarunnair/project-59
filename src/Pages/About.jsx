@@ -139,7 +139,7 @@ const TextBoxHead = styled(Typography)(({ theme }) => ({
   fontWeight:600,
   fontSize:27,
   fontFamily:"cursive",
- 
+ textDecoration:"underline",
   [theme.breakpoints.down("xl")]: {},
   [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {},

@@ -226,6 +226,7 @@ const OuterContainer = styled(Box)(({ theme }) => ({
   const Wrapper = styled(Box)(({ theme }) => ({ 
    display:"flex",
    gap:20,
+  
     [theme.breakpoints.down("xl")]: {},
     [theme.breakpoints.down("lg")]: {},
     [theme.breakpoints.down("md")]: {},
@@ -233,7 +234,7 @@ const OuterContainer = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down("xs")]: {},
   }));
   const BoxDiv = styled(Box)(({ theme }) => ({
-//   border:"2px solid red",
+
    padding:10,
    width:"100%",
    display:"flex",
@@ -251,23 +252,22 @@ const OuterContainer = styled(Box)(({ theme }) => ({
   width:"100%",
   borderRadius:20,
   background:"#fff",
-//   border:"1px solid red",
   display:"flex",
   flexDirection:"column",
   justifyContent:"center",
   alignItems:"center",
   gap:10,
   padding:20,
+ 
   boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",
   ":hover":{
-boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;"
-  },
-
- 
-   
+boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
+  },  
     [theme.breakpoints.down("xl")]: {},
     [theme.breakpoints.down("lg")]: {},
-    [theme.breakpoints.down("md")]: {},
+    [theme.breakpoints.down("md")]: {
+        padding:10,
+    },
     [theme.breakpoints.down("sm")]: {},
     [theme.breakpoints.down("xs")]: {},
   }));

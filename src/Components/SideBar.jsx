@@ -88,7 +88,7 @@ export default function TemporaryDrawer({ sendData }) {
 
   return (
     <div>
-      <Button sx={{fontSize:35,}} onClick={toggleDrawer(true)}>=</Button>
+      <Button sx={{fontSize:35,color:"white"}} onClick={toggleDrawer(true)}>=</Button>
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
