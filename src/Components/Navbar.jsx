@@ -200,6 +200,7 @@ const TextBoxBtn = styled(Button)(({ theme }) => ({
 function Navbar(props) {
   
   const [language,setLanguage]=useState(true)
+  console.log("object")
 
   const navigate=useNavigate()
 
